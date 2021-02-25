@@ -54,33 +54,39 @@ function App() {
 
   return (
     <div>
-      <div className="heading">
-        <img src={alan} className={classes.alanLogo} alt="logo" />
-        <div className={classes.card2} style={{ background: "#242d4e" }}>
-          <Typography variant="h5" component="h5">
-            Weather News
-          </Typography>
-          <Typography variant="h6" component="h6">
-            <strong>
-              Temp :{" "}
-              <Button
-                className={classes.btn}
-                variant="contained"
-                color="secondary"
-              >
-                {weather.temp}°
-              </Button>{" "}
-              F{" "}
-            </strong>
-            <br />
-            <strong> {weather.name} </strong>
-          </Typography>
-          <Typography variant="h6" component="h6">
-            Try saying: <br /> <i>Whats the weather today in </i>
-            <br></br>
-            <i>[country name]</i>
-          </Typography>
-        </div>
+      <div>
+        {newsArticles.length ? (
+          ""
+        ) : (
+          <div className="heading">
+            <img src={alan} className={classes.alanLogo} alt="logo" />
+            <div className={classes.card2} style={{ background: "#242d4e" }}>
+              <Typography variant="h5" component="h5">
+                Weather News
+              </Typography>
+              <Typography variant="h6" component="h6">
+                <strong>
+                  Temp :{" "}
+                  <Button
+                    className={classes.btn}
+                    variant="contained"
+                    color="secondary"
+                  >
+                    {weather.temp}°
+                  </Button>{" "}
+                  F{" "}
+                </strong>
+                <br />
+                <strong> {weather.name} </strong>
+              </Typography>
+              <Typography variant="h6" component="h6">
+                Try saying: <br /> <i>Whats the weather today in </i>
+                <br></br>
+                <i>[country name]</i>
+              </Typography>
+            </div>
+          </div>
+        )}
       </div>
       <div className={classes.logoContainer}>
         {newsArticles.length ? (

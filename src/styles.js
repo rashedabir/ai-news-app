@@ -99,7 +99,4 @@ export default makeStyles((theme) => ({
       },
     },
   },
-  btn: {
-    
-  }
 }));

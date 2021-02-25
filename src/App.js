@@ -64,7 +64,7 @@ function App() {
             Weather News
           </Typography>
             <Typography variant="h6" component="h6">
-              <strong>Temp : {main} Celcius </strong><br />
+              <strong>Temp : {main} Celsius </strong><br />
             </Typography>
           <Typography variant="h6" component="h6">
             Try saying: <br /> <i>Whats the weather today in </i>

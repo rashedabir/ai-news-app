@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import alanBtn from "@alan-ai/alan-sdk-web";
 import "./App.css";
-import { Typography } from "@material-ui/core";
+import { Typography, Button } from "@material-ui/core";
 import wordsToNumbers from "words-to-numbers";
 import alan from "./assets/alan.jpg";
 import NewsCards from "./component/NewsCards/NewsCards";
@@ -15,19 +15,19 @@ function App() {
   const [activeArticle, setActiveArticle] = useState(0);
   const [newsArticles, setNewsArticles] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
-  const [main, setMain] = useState([]);
+  const [weather, setWeather] = useState([]);
 
   const classes = useStyles();
 
   useEffect(() => {
     alanBtn({
       key: alanKey,
-      onCommand: ({ command, articles, number, main }) => {
+      onCommand: ({ command, articles, number, weatherData }) => {
         if (command === "newHeadlines") {
           setNewsArticles(articles);
           setActiveArticle(-1);
-        } else if (command === "weatherNews") {
-          setMain(main.temp);
+        } else if (command === "showWeather") {
+          setWeather(weatherData);
         } else if (command === "instructions") {
           setIsOpen(true);
         } else if (command === "highlight") {
@@ -56,16 +56,25 @@ function App() {
     <div>
       <div className="heading">
         <img src={alan} className={classes.alanLogo} alt="logo" />
-        <div
-          className={classes.card2}
-          style={{background: "#242d4e"}}
-        >
+        <div className={classes.card2} style={{ background: "#242d4e" }}>
           <Typography variant="h5" component="h5">
             Weather News
           </Typography>
-            <Typography variant="h6" component="h6">
-              <strong>Temp : {main} Celsius </strong><br />
-            </Typography>
+          <Typography variant="h6" component="h6">
+            <strong>
+              Temp :{" "}
+              <Button
+                className={classes.btn}
+                variant="contained"
+                color="secondary"
+              >
+                {weather.temp}°
+              </Button>{" "}
+              F{" "}
+            </strong>
+            <br />
+            <strong> {weather.name} </strong>
+          </Typography>
           <Typography variant="h6" component="h6">
             Try saying: <br /> <i>Whats the weather today in </i>
             <br></br>

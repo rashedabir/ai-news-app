@@ -92,11 +92,14 @@ export default makeStyles((theme) => ({
       flexDirection: "column",
       textAlign: "center",
       width: "84%",
-      height: "250px",
+      height: "300px",
       marginTop: "15px",
       "&:nth-of-type(1)": {
         marginBottom: "12px",
       },
     },
   },
+  btn: {
+    
+  }
 }));

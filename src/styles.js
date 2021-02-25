@@ -72,7 +72,7 @@ export default makeStyles((theme) => ({
     padding: "0 5%",
     margin: "3% 0",
     [theme.breakpoints.down("sm")]: {
-      height: "35vmin",
+      height: "55vmin",
     },
   },
   card2: {
@@ -83,10 +83,20 @@ export default makeStyles((theme) => ({
     textAlign: "center",
     width: "350px",
     height: "300px",
-    padding: "20px",
+    padding: "28px",
     borderRadius: 10,
     color: "white",
     marginTop: "30px",
     marginBottom: "10px",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+      textAlign: "center",
+      width: "84%",
+      height: "250px",
+      marginTop: "15px",
+      "&:nth-of-type(1)": {
+        marginBottom: "12px",
+      },
+    },
   },
 }));

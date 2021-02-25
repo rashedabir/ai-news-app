@@ -80,13 +80,6 @@ function App() {
               <Typography variant="h5" component="h2">
                 Try saying: <br />
                 <br />
-                Open article number [4]
-              </Typography>
-            </div>
-            <div className={classes.card}>
-              <Typography variant="h5" component="h2">
-                Try saying: <br />
-                <br />
                 Go back
               </Typography>
             </div>

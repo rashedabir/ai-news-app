@@ -73,8 +73,7 @@ function App() {
                     color="secondary"
                   >
                     {weather.temp}°
-                  </Button>{" "}
-                  F{" "}
+                  </Button>
                 </strong>
                 <br />
                 <strong> {weather.name} </strong>
